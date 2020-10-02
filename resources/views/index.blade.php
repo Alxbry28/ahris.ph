@@ -8,7 +8,7 @@
    <!-- Navbar -->
    <nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-gradient-default">
      <div class="container">
-       <a class="navbar-brand" href="./pages/dashboards/dashboard.html">
+       <a class="navbar-brand" href="/">
          <img src="./assets/img/brand/logo-white.png">
        </a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +19,7 @@
            <div class="row">
              <div class="col-6 collapse-brand">
                <a href="#">
-                 <img src="./assets/img/brand/blue.png">
+                 <h1 class="text-default"> AHRIS PH </h1>
                </a>
              </div>
              <div class="col-6 collapse-close">
@@ -143,17 +143,27 @@
          </svg>
        </div>
      </div>
-     <section class="py-6 pb-9 bg-default">
+     <section class="py-6 bg-default">
        <div class="row justify-content-center text-center">
          <div class="col-md-6">
-           <h2 class="display-2 text-white">Accounting Features</h3>
-             <p class="lead text-white">
-              
-             </p>
+           <h1 class="display-3 text-white">Accounting Features</h1>
+            
          </div>
        </div>
      </section>
-      <section class="section section-lg pt-lg-0 mt--7 text-center">
+      <section class="section-nucleo-icons bg-white overflow-hidden mt-5 mb-2">
+       <div class="container">
+         <div class="row justify-content-center">
+           <div class="col-lg-8 text-center">
+             <h1 class="display-3">Tax Support Features</h1>
+             <h2 class="display-5">Sales, Purchases and Importation Summary</h2>
+             <p class="lead">
+               Download monthly sales andpurchases summary withcomplete details for taxcompliance
+             </p>
+           </div>
+         </div>
+     </section> 
+      <section class="section section-lg pt-lg-0 mt-3 text-center">
        <div class="container">
          <div class="row justify-content-center">
            <div class="col-lg-12">
@@ -197,7 +207,7 @@
                      <div class="icon icon-shape bg-default text-white rounded-circle mb-4">
                        <i class="ni ni-box-2"></i>
                      </div>
-                     <h4 class="h3 text-warning text-uppercase">Track Inventory</h4>
+                     <h4 class="h3 text-info text-uppercase">Track Inventory</h4>
                      <p class="description mt-3">Efficiently managequantity to avoidoverstocking andinsufficient stocks.</p>
                    </div>
                  </div>
@@ -207,18 +217,6 @@
          </div>
        </div>
      </section>
-      <section class="section-nucleo-icons bg-white overflow-hidden">
-       <div class="container">
-         <div class="row justify-content-center">
-           <div class="col-lg-8 text-center">
-             <h1 class="display-3">Tax Support Features</h1>
-              <h2 class="display-5">Sales, Purchases and Importation Summary</h2>
-             <p class="lead">
-               Download monthly sales andpurchases summary withcomplete details for taxcompliance
-             </p>
-           </div>
-         </div>
-     </section> 
    </div>
    <!-- Footer -->
    <footer class="py-5" id="footer-main">

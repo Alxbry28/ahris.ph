@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SendEmailController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,9 +32,20 @@ Route::get('admin-dashboard/ar-user-control', 'App\Http\Controllers\FrontendCont
 Route::get('admin-dashboard/ar-web-monitoring', 'App\Http\Controllers\FrontendController@adminMonitoring');
 Route::get('admin-dashboard/ar-web-updates', 'App\Http\Controllers\FrontendController@adminWebUpdates');
 
+
+// User Routes 
 Route::get('dashboard/profile', 'App\Http\Controllers\FrontendController@userProfile');
 Route::get('dashboard/personal-settings', 'App\Http\Controllers\FrontendController@userPersonalSettings');
 Route::get('dashboard/modal', 'App\Http\Controllers\FrontendController@modalUsername');
 
 
+// Company Routes 
+Route::get('company/dashboard', 'App\Http\Controllers\FrontendController@companyDashboard');
+
+// Company Sub-Routes for Quick Actions
+
+
+
+// Email Route
+Route::get('send-mail', [SendEmailController::class, 'sendEmail']);
 

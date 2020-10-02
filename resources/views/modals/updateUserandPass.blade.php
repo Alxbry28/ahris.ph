@@ -6,10 +6,11 @@
                           <div class="card bg-secondary border-0 mb-0">
                             <div class="card-body px-lg-5 py-lg-5">
                               <div class="text-center text-muted mb-4">
-                                <h1> Update your AHRIS </h1>
+                                <h1> Update your Account </h1>
                                 <small>Username & Password</small>
                               </div>
                               <form class="needs-validation" method="#">
+                                @csrf
                                <div class="form-row">
                                   <div class="col-md-12">
                                     <label class="form-control-label" for="validationCustomUsername">Username</label>

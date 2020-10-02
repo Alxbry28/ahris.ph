@@ -34,19 +34,19 @@
 
         <ul class="navbar-nav align-items-lg-center ml-lg-auto">
           <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" data-toggle="tooltip" data-original-title="Like us on Facebook">
+            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" data-original-title="Like us on Facebook">
               <i class="fab fa-facebook-square"></i>
               <span class="nav-link-inner--text d-lg-none">Facebook</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank" data-toggle="tooltip" data-original-title="Follow us on Instagram">
+            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" data-original-title="Follow us on Instagram">
               <i class="fab fa-instagram"></i>
               <span class="nav-link-inner--text d-lg-none">Instagram</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" target="_blank" data-toggle="tooltip" data-original-title="Follow us on Twitter">
+            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" data-original-title="Follow us on Twitter">
               <i class="fab fa-twitter-square"></i>
               <span class="nav-link-inner--text d-lg-none">Twitter</span>
             </a>
@@ -85,21 +85,26 @@
               <div class="text-center text-muted mb-4">
                 <small>Sign up with credentials</small>
               </div>
-              <form role="form">
+              <form method="#" class="needs-validation" novalidate>
+                @csrf
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                     </div>
-                    <input class="form-control" name="firstName" placeholder="First Name" type="text">
-                  </div>
+                    <label class="form-control-label" for="validationFirstName"></label>
+                    <input class="form-control is-valid" name="firstName" id="validationFirstName" placeholder="First Name" type="text" required>
+                  <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
                 </div>
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                     </div>
-                    <input class="form-control" name="lastName" placeholder="Last Name" type="text">
+                    <input class="form-control is-valid" name="lastName" placeholder="Last Name" type="text" required>
                   </div>
                 </div>
                 <div class="form-group">
@@ -107,7 +112,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Email" type="email">
+                    <input class="form-control" placeholder="Email" type="email" required>
                   </div>
                 </div>
                 <div class="form-group">
@@ -115,13 +120,15 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Phone Number" type="Number">
+                    <input class="form-control" placeholder="Phone Number" type="Number" required>
                   </div>
                 </div>
                 <div class="form-group">
-                  <form>
+                  <!-- 
+                      
+                   -->
                     <p class="mb-0">Choose Country</p>
-                  <select class="form-control" data-toggle="select">
+                  <select class="form-control" data-toggle="select" required>
                     <option>Ch</option>
                     <option>Badges</option>
                     <option>Buttons</option>
@@ -143,20 +150,24 @@
                     <option>Modals</option>
                     <option>Modals</option>
                   </select>
-                </form>
                 </div>
+                <div class="form-group">
                 <div class="row my-4">
                   <div class="col-12">
                     <div class="custom-control custom-control-alternative custom-checkbox">
-                      <input class="custom-control-input" id="customCheckRegister" type="checkbox">
-                      <label class="custom-control-label" for="customCheckRegister">
+                      <input class="custom-control-input" id="invalidCheck" type="checkbox" required>
+                      <label class="custom-control-label"  for="invalidCheck">
                         <span class="text-muted">I agree to the <a href="#">Terms of Service </a> &amp; <a href="#">Privacy Policy</a> of Ahris PH </span>
                       </label>
+                      <div class="invalid-feedback">
+                        You must agree before submitting.
+                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary mt-4">Create account</button>
+                  <button type="submit" class="btn btn-primary mt-4">Create account</button>
                 </div>
               </form>
             </div>
@@ -182,10 +193,7 @@
         <div class="col-xl-6">
           <ul class="nav nav-footer justify-content-center justify-content-xl-end">
             <li class="nav-item">
-              <a href="#" class="nav-link" target="_blank">About us</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" target="_blank">Blogs</a>
+              <a href="#" class="nav-link">About us</a>
             </li>
           </ul>
         </div>
@@ -193,6 +201,26 @@
     </div>
   </footer>
    @include('layouts.asset-js')
+   <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
 </body>
 
 </html>

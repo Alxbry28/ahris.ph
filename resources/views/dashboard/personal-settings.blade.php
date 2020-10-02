@@ -12,7 +12,7 @@
     @include('layouts.user-topnav')
     <!-- Page content -->
       <!-- UserName Modal -->
-     @include('layouts.userNameUpdate')
+     @include('modals.updateUserandPass')
       <div class="container mt-5 mb-5">
         <div class="row">
         <div class="col">

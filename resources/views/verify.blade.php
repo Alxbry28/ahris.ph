@@ -84,7 +84,6 @@
                 <small>Sign in with credentials</small>
               </div>
               <form role="form">
-                @csrf
                 <div class="form-group mb-3">
                   <div class="input-group input-group-merge input-group-alternative">
                     <div class="input-group-prepend">

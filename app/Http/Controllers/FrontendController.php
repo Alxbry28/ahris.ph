@@ -81,4 +81,63 @@ class FrontendController extends Controller
         return view('dashboard.modal');
     }
 
+    //  END OF USER ROUTING FUNCTIONS
+
+
+    // COMPANY ROUTING FUNCTIONS
+
+    public function companyDashboard() {
+        return view('company.dashboard');
+    }
+
+    //  END OF COMPANY ROUTING FUNCTIONS
+
+
+
+    // COMPANY-RECORDS ROUTING FUNCTIONS
+
+    public function companyOrganizationSettings() {
+        return view('company.records.organization-settings');
+    }   
+
+    public function companyChartsOfAccounts() {
+        return view('company.records.records-charts-of-accounts');
+    }
+
+    public function companyRecordCustomer() {
+        return view('company.records.records-customer');
+    }
+
+    public function companyRecordProductServices() {
+        return view('company.records.records-products-services');
+    }
+
+    public function companyReocrdSuppliers() {
+        return view('company.records.records-suppliers');
+    }
+
+    public function companyTaxRate() {
+        return view('company.records.records-tax-rate');
+    }
+
+    public function companyRecordUsers() {
+        return view('company.records.records-users');
+    }
+
+
+
+    // END OF COMPANY-RECORDS ROUTING FUNCTIONS
+
+
+    // COMPANY-QUICK ACTIONS ROUTING FUNCTIONS
+
+
+    // END OF COMPANY-QUICK ACTIONS ROUTING FUNCTIONS
+
+
+    // COMPANY-REPORTS ROUTING FUNCTIONS
+
+
+    // END OF COMPANY-REPORTS ROUTING FUNCTIONS
+
 }

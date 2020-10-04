@@ -9,14 +9,14 @@
                                 <h1> Reset your Password </h1>
                                 <small>Enter your username or email and we'll send you a link to recover your account.</small>
                               </div>
-                              <form class="needs-validation" novalidate method="#">
+                            <form class="needs-validation" novalidate method="POST" action="/forgot-password">
                                 @csrf
                                <div class="form-row">
                                   <div class="col-md-12">
                                     <label class="form-control-label" for="validationCustomUsername">Username / Email </label>
-                                    <input type="text" class="form-control is-valid" id="validationCustomUsername" placeholder="" aria-describedby="inputGroupPrepend" required>
+                                    <input type="text" name="email" class="form-control is-valid" id="validationCustomUsername" placeholder="" aria-describedby="inputGroupPrepend" required>
                                     <div class="invalid-feedback">
-                                    Please Enter your Username / Email!
+                                    Please Enter your Email!
                                   </div>
                                   </div>
                                   

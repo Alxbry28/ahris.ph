@@ -3,18 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class FrontendController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     // base for Login
     public function login() {
-    	return view('login');
+    	return view('auth.login');
+    }
+    public function testinglang() {
+    	return view('auth.reset-password');
+    }
+    public function logout() {
+        Auth::logout();
+        return redirect('/');  
     }
 
     //base for Register
 
     public function register() {
-    	return view('register');
+    	return view('auth.register');
     }
 
     /// base for Blogs
@@ -70,7 +82,8 @@ class FrontendController extends Controller
     // FOR USERS ROUTING FUNCTION
 
     public function userProfile() {
-        return view('dashboard.profile');
+        $user = Auth::user();
+        return view('dashboard.profile', compact('user'));
     }
 
     public function userPersonalSettings() {

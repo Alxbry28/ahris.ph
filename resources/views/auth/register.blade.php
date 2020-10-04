@@ -84,8 +84,9 @@
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
                 <small>Sign up with credentials</small>
+                {{$errors}}
               </div>
-              <form method="#" class="needs-validation" novalidate>
+            <form method="POST" action="{{ route('register') }}" class="needs-validation" novalidate>
                 @csrf
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative mb-3">
@@ -93,10 +94,12 @@
                       <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                     </div>
                     <label class="form-control-label" for="validationFirstName"></label>
-                    <input class="form-control is-valid" name="firstName" id="validationFirstName" placeholder="First Name" type="text" required>
-                  <div class="valid-feedback">
+                    {{-- <input class="form-control is-valid" name="firstName" id="validationFirstName" placeholder="First Name" type="text" required> --}}
+                    <input class="form-control is-valid" name="firstname" id="validationFirstName" placeholder="First Name" type="text" required>
+                      
+                    {{-- <div class="valid-feedback">
                         Looks good!
-                      </div>
+                      </div> --}}
                     </div>
                 </div>
                 <div class="form-group">
@@ -104,29 +107,49 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                     </div>
-                    <input class="form-control is-valid" name="lastName" placeholder="Last Name" type="text" required>
+                    <input class="form-control is-valid" name="lastname" placeholder="Last Name" type="text" required>
                   </div>
                 </div>
-                <div class="form-group">
-                  <div class="input-group input-group-merge input-group-alternative mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                    </div>
-                    <input class="form-control" placeholder="Email" type="email" required>
-                  </div>
-                </div>
+
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Phone Number" type="Number" required>
+                    <input class="form-control" name="phonenumber" placeholder="Phone Number" type="text" maxlength="11" required>
                   </div>
                 </div>
+
                 <div class="form-group">
-                  <!-- 
-                      
-                   -->
+                  <div class="input-group input-group-merge input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    </div>
+                    <input class="form-control" name="email" placeholder="Email" type="email" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-key-25"></i></span>
+                    </div>
+                    <input class="form-control is-valid" name="password" placeholder="Password" type="password" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-key-25"></i></span>
+                    </div>
+                    <input class="form-control is-valid" name="password_confirmation" placeholder="Confirm Password" type="password" required>
+                  </div>
+                </div>
+
+             
+
+                {{-- <div class="form-group">
                     <p class="mb-0">Choose Country</p>
                   <select class="form-control" data-toggle="select" required>
                     <option>Ch</option>
@@ -150,7 +173,8 @@
                     <option>Modals</option>
                     <option>Modals</option>
                   </select>
-                </div>
+                </div> --}}
+
                 <div class="form-group">
                 <div class="row my-4">
                   <div class="col-12">

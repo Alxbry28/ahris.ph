@@ -19,12 +19,14 @@
       <div class="container-fluid d-flex align-items-center">
         <div class="row">
           <div class="col-lg-7 col-md-10">
-            <h1 class="display-2 text-white">Hello Joshua</h1>
+     
+            <h1 class="display-2 text-white">Hello {{$user->firstname}}</h1> 
             <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
           </div>
         </div>
       </div>
     </div>
+    
     <!-- Page content -->
     <div class="container-fluid mt--6" style="background-color: #e3e3e3">
       <div class="row">
@@ -57,7 +59,7 @@
               </div>
               <div class="text-center">
                 <h5 class="h3">
-                  Joshua Alcantara
+                  {{$user->firstname.' '.$user->lastname}}
                 </h5>
                 <div class="h4 font-weight-300">
                   <i class="ni location_pin mr-2"></i>Bucharest, Romania
@@ -101,25 +103,25 @@
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-first-name">First name</label>
-                        <input type="text" id="input-first-name" class="form-control" placeholder="First name" value="Lucky">
+                        <input type="text" id="input-first-name" class="form-control" placeholder="First name" value="{{$user->firstname}}">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-last-name">Last name</label>
-                        <input type="text" id="input-last-name" class="form-control" placeholder="Last name" value="Jesse">
+                        <input type="text" id="input-last-name" class="form-control" placeholder="Last name" value="{{$user->lastname}}">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-number">Phone Number</label>
-                        <input type="number" id="input-number" class="form-control" placeholder="Phone Number" value="">
+                        <input type="number" id="input-number" class="form-control" placeholder="Phone Number" value="{{$user->phonenumber}}">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Email address</label>
-                        <input type="email" id="input-email" class="form-control" placeholder="jesse@example.com">
+                        <input type="email" value="{{$user->email}}" id="input-email" class="form-control" placeholder="jesse@example.com">
                       </div>
                     </div>
                     <div class="col-lg-6">
@@ -180,12 +182,12 @@
                         <input type="text" id="input-city" class="form-control" placeholder="City" value="New York">
                       </div>
                     </div>
-                    <div class="col-lg-4">
+                    {{-- <div class="col-lg-4">
                       <div class="form-group">
                         <label class="form-control-label" for="input-country">Country</label>
                         <input type="text" id="input-country" class="form-control" placeholder="Country" value="United States">
                       </div>
-                    </div>
+                    </div> --}}
                     <div class="col-lg-4">
                       <div class="form-group">
                         <label class="form-control-label" for="input-country">Postal code</label>
@@ -210,7 +212,7 @@
       </div>
     </div>
       <!-- Footer -->
-      @include('layouts.footer')
+      {{-- @include('layouts.footer') --}}
     </div>
   </div>
    @extends('layouts.asset-js')

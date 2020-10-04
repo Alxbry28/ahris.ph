@@ -62,8 +62,8 @@
         <div class="header-body text-center mb-7">
           <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 col-md-8 px-5">
-              <h2 class="text-white"> Hello There!</h2>
-              <h1 class="text-white">Welcome to Ahris PH! </h1>
+              {{-- <h2 class="text-white"> Reset Password</h2> --}}
+              <h1 class="text-white">Reset Password </h1>
             </div>
           </div>
         </div>
@@ -81,16 +81,20 @@
           <div class="card bg-secondary border-0 mb-0">
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
-                <small>Sign in with credentials</small>
+                <small>Reset Password</small>
+                {{$errors}}
               </div>
-              <form role="form">
+            <form method="POST" action="/reset-password" role="form">
                 @csrf
-                <div class="form-group mb-3">
+                <input class="form-control" name="token" type="hidden" value="{{$request->route('token')}}">
+                <input class="form-control" name="email" placeholder="Email" type="hidden" value="<?= $_GET['email']?>">
+
+                <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative">
                     <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Email" type="email">
+                    <input class="form-control" name="password" placeholder="Password" type="password">
                   </div>
                 </div>
                 <div class="form-group">
@@ -98,29 +102,24 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Password" type="password">
+                    <input class="form-control" name="password_confirmation" placeholder="Confirm Password" type="password">
                   </div>
                 </div>
-                <div class="custom-control custom-control-alternative custom-checkbox">
-                  <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
-                  <label class="custom-control-label" for=" customCheckLogin">
-                    <span class="text-muted">Remember me</span>
-                  </label>
-                </div>
+               
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary my-4">Sign in</button>
+                  <button type="submit" class="btn btn-primary my-4">Reset Password</button>
                 </div>
               </form>
             </div>
           </div>
-          <div class="row mt-3">
+          {{-- <div class="row mt-3">
             <div class="col-6">
               <a href="forgot-password" class="text-light" data-toggle="modal" data-target="#modal-form"><small>Forgot password?</small></a>
             </div>
             <div class="col-6 text-right">
               <a href="register" class="text-light"><small>Create new account</small></a>
             </div>
-          </div>
+          </div> --}}
         </div>
       </div>
     </div>
